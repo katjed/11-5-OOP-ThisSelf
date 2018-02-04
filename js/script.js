@@ -1,5 +1,4 @@
-$(function(){
-
+$(function() {
 	function Button(text) {
 		this.text = text || 'Hello';
 	}
@@ -7,6 +6,7 @@ $(function(){
 	Button.prototype = {
 		create: function() {
 			var self = this;
+			
 			this.$element = $('<button>');
 			this.$element.text(this.text);
 			this.$element.click(function() {
@@ -14,14 +14,12 @@ $(function(){
 			});
 
 			$('body').append(this.$element);
-
-			// alternative
-			// this.$element.appendTo($('body'));
+			// this.$element.appendTo($('body'));  // alternative
 		}
 	};
 
 	var btn1 = new Button('Hello!');
+	
 	btn1.create();
-
 });
 
